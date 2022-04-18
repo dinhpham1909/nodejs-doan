@@ -1,11 +1,27 @@
-let homeIndex = (req, res) => {
-    res.render('index');
+let dashboardIndex = (req, res) => {
+    res.render('pages/dashboard');
 }
-let getAboutPage = (req, res) =>{
-    res.send('Định ơi Nam đi ăn cơm');
+let tableIndex = (req, res) => {
+    res.render('pages/table');
+}
+let billingIndex = (req, res) => {
+    res.render('pages/billing');
+}
+let profileIndex = (req, res) => {
+    res.render('pages/profile');
+}
+let loginIndex = (req, res) => {
+    res.render('acounts/login');
+}
+let registerIndex = (req, res) => {
+    res.render('acounts/register');
 }
 
 module.exports = {
-    homeIndex: homeIndex,
-    getAboutPage: getAboutPage,
+    dashboardIndex: dashboardIndex,
+    tableIndex:tableIndex,
+    billingIndex:billingIndex,
+    profileIndex:profileIndex,
+    loginIndex:loginIndex,
+    registerIndex:registerIndex,
 };
