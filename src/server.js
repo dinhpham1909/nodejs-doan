@@ -1,14 +1,19 @@
+import express from "express";
+import bodyParser from 'body-parser';
+require('dotenv').config();
+import viewEngine from '../src/configs/viewEngine';
+import webRoute from '../src/routes/route';
 
-const express = require('express')
-const app = express()
-const port = 3000
+let app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+viewEngine(app);
+webRoute(app);
+
+let port = process.env.PORT || 8080;
+console.log(port);
+app.listen(port,() =>{
+    console.log('May len hộ tao: '+ port);
 })
-app.get('/n', (req, res) => {
-  res.send('Hello World!')
-})
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
